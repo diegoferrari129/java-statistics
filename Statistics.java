@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Statistics {
     public static void main(String[] args) {
@@ -32,6 +33,9 @@ public class Statistics {
 
         double media = (double) sum / numbers.length;
 
+        Arrays.sort(numbers);
+
+        System.out.println("Sorted array: " + Arrays.toString(numbers));
         System.out.println("Sum: " + sum);
         System.out.println("Media: " + media);
         System.out.println("Max: " + max);
