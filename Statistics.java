@@ -1,7 +1,18 @@
+import java.util.Scanner;
+
 public class Statistics {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        int[] numbers = { 1, 2, 3, 4, 5 };
+        int userNumbers = 5;
+        int[] numbers = new int[userNumbers];
+
+        System.out.println("Inserisci " + userNumbers + " numeri:");
+        for (int i = 0; i < userNumbers; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        scanner.close();
 
         int sum = 0;
         int max = numbers[0];
