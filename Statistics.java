@@ -11,12 +11,15 @@ public class Statistics {
         System.out.println("Inserisci " + userNumbers + " numeri:");
         for (int i = 0; i < userNumbers; i++) {
             while (true) {
-                if (scanner.hasNextInt()) {
-                    numbers[i] = scanner.nextInt();
+                System.out.print("Inserisci il numero " + (i + 1) + " di " + userNumbers + ": ");
+                String input = scanner.nextLine().trim();
+
+                try {
+                    numbers[i] = Integer.parseInt(input);
                     break;
-                } else {
-                    System.out.println("Errore: Inserisci un numero valido. Tutti i numeri devono essere interi.");
-                    scanner.next();
+                } catch (NumberFormatException e) {
+                    System.out.println(
+                            "Errore: Devi inserire un numero intero positivo. Inserisci un numero alla volta.");
                 }
             }
         }
