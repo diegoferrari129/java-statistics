@@ -10,7 +10,15 @@ public class Statistics {
 
         System.out.println("Inserisci " + userNumbers + " numeri:");
         for (int i = 0; i < userNumbers; i++) {
-            numbers[i] = scanner.nextInt();
+            while (true) {
+                if (scanner.hasNextInt()) {
+                    numbers[i] = scanner.nextInt();
+                    break;
+                } else {
+                    System.out.println("Errore: Inserisci un numero valido. Tutti i numeri devono essere interi.");
+                    scanner.next();
+                }
+            }
         }
 
         scanner.close();
